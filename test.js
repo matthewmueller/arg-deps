@@ -2,6 +2,7 @@
  * Module Dependencies
  */
 
+var Uglify = require('uglify-js');
 var assert = require('assert');
 var deps = require('./');
 
@@ -41,4 +42,13 @@ describe('arg-deps', function() {
     assert.equal('okay', out.a[1]);
   })
 
+  it('should work with uglify', function() {
+    var fn = function hi(o, a) { function another() { o.hi + o.hai + a.ok + a.okay; } another(); }
+    var js = Uglify.minify(fn.toString(), { fromString: true }).code;
+    var out = deps(js);
+    assert.equal('hi', out.i[0]);
+    assert.equal('hai', out.i[1]);
+    assert.equal('ok', out.n[0]);
+    assert.equal('okay', out.n[1]);
+  })
 });

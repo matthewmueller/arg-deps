@@ -42,16 +42,3 @@ function deps(fn) {
 
   return out;
 }
-//
-// var out = deps(function(o, another) {
-//   return o.name + zomg(o.house);
-// o.lol, o[2314]
-//   function another() {
-//     this.is + another['test']
-//   }
-// })
-//
-// console.log(out);
-// console.log(deps(function d(n,t){function t(){return this.is+t.test} n.name + zomg(n.house);n.lol; t(hi)}));
-//
-// console.log(deps(function(){}));
