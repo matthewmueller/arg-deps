@@ -1,6 +1,6 @@
 # arg-deps
 
-Statically inspect a function to get the properties of your arguments. Works with minified code
+Statically inspect a function to get the properties of its arguments. Works with minified code.
 
 ## Example
 
