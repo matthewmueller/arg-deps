@@ -1,0 +1,24 @@
+{
+  "name": "arg-deps",
+  "version": "1.0.0",
+  "description": "statically parse out properties from arguments in a function",
+  "main": "index.js",
+  "dependencies": {
+    "fn-body": "^0.0.3",
+    "parse-fn-args": "^0.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.1"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "arguments",
+    "properties",
+    "props",
+    "dependencies"
+  ],
+  "author": "Matthew Mueller",
+  "license": "MIT"
+}
