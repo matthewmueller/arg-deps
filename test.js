@@ -51,4 +51,12 @@ describe('arg-deps', function() {
     assert.equal('ok', out.n[0]);
     assert.equal('okay', out.n[1]);
   })
+
+  it('should uniquify arguments', function() {
+    var out = deps(function(o, a) { function another() { o.hi + o.hi + a.ok + a.ok; } });
+    assert.equal('hi', out.o[0]);
+    assert.equal('ok', out.a[0]);
+    assert(1 == out.o.length);
+    assert(1 == out.a.length);
+  })
 });

@@ -40,5 +40,24 @@ function deps(fn) {
     out[m[1]] && out[m[1]].push(m[2] || +m[3]);
   }
 
+  // ensure all arguments are unique
+  for (var k in out) {
+    out[k] = unique(out[k]);
+  }
+
   return out;
+}
+
+/**
+ * Unique-ify using a hash seive
+ *
+ * @param {Array} arr
+ * @return {Array}
+ */
+
+function unique(arr) {
+  var o = {}, i, l = arr.length, r = [];
+  for(i=0; i<l;i+=1) o[arr[i]] = arr[i];
+  for(i in o) r.push(o[i]);
+  return r;
 }
