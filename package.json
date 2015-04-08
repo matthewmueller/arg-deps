@@ -1,6 +1,6 @@
 {
   "name": "arg-deps",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "statically parse out properties from arguments in a function",
   "main": "index.js",
   "dependencies": {

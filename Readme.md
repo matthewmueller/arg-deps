@@ -14,10 +14,10 @@ var out = deps(function(props, arr) {
   arr[1] = 40;
 });
 
-// {
-//   props: ['width', 'height'],
-//   arr: [0, 1]
-// }
+// [
+//   ['width', 'height'],
+//   [0, 1]
+// ]
 ```
 
 ## Installation
