@@ -29,20 +29,22 @@ module.exports = deps;
 function deps(fn) {
   var body = fnbody(fn);
   var args = parse(fn);
-  var out = {};
+  var obj = {};
+  var out = [];
   var m;
 
   args.forEach(function(arg) {
-    out[arg] = [];
+    obj[arg] = [];
   })
 
   while (m = regexp.exec(body)) {
-    out[m[1]] && out[m[1]].push(m[2] || +m[3]);
+    obj[m[1]] && obj[m[1]].push(m[2] || +m[3]);
   }
 
   // ensure all arguments are unique
-  for (var k in out) {
-    out[k] = unique(out[k]);
+  for (var k in obj) {
+    obj[k] = unique(obj[k]);
+    out.push(obj[k]);
   }
 
   return out;
